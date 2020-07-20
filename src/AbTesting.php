@@ -126,6 +126,9 @@ class AbTesting
     {
         $this->pageView();
 
+        if (! $this->getExperiment()) {
+            return false;
+        }
         return $this->getExperiment()->name === $name;
     }
 
